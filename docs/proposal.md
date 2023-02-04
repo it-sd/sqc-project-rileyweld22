@@ -14,13 +14,11 @@ have also set up a profile page to let you show of your all time favorites
 to whomever views it.
 ---------------
 
----------------
 ## Web service ##
 ### ![Spotify](https://developer.spotify.com/documentation/web-api/) 
 OAuth 2.0 ###
 
 ### - Base Url for all web api requests = https://api.spotify.com/v1 ###
----------------
 
 ---------------
 ## Database Use ##
@@ -35,9 +33,8 @@ website. Obviously you can only access a certain table if your in the
 right spot. For example, you can't get to the chart page unless you logged 
 in and got to the main page. I'm going to need 3 tables. The personal 
 login table, personal information table, and the chart table.  ###
----------------
 
 ---------------
 ## Initial designs ##
-###### ![SITE MAP](./docs/siteLayout.jpeg) ![SAMPLE 
-LAYOUT](./docs/samplePage.jpeg) ######
+###### ![SITE MAP](../docs/siteLayout.jpeg) ![SAMPLE 
+LAYOUT](../docs/samplePage.jpeg) ######
