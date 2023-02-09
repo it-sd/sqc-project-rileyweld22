@@ -16,9 +16,10 @@ to whomever views it.
 
 ## Web service ##
 ### [Spotify](https://developer.spotify.com/documentation/web-api/) ###
-OAuth 2.0 ###
+#### Spotify uses OAuth 2.0 ####
 
-### - Base Url for all web api requests = [HERE](https://api.spotify.com/v1) ###
+### - Base Url for all web api requests = "https://api.spotify.com/v1" ###
+### Example of a get method = curl -X GET "https://api.spotify.com/v1/tracks/6kLCHFM39wkFjOuyPGLGeQ?market=US" ###
 
 ---------------
 ## Database Use ##
