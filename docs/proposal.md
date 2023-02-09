@@ -18,7 +18,7 @@ to whomever views it.
 ### [Spotify](https://developer.spotify.com/documentation/web-api/) ###
 OAuth 2.0 ###
 
-### - Base Url for all web api requests = https://api.spotify.com/v1 ###
+### - Base Url for all web api requests = [HERE](https://api.spotify.com/v1) ###
 
 ---------------
 ## Database Use ##
