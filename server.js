@@ -9,19 +9,19 @@ express()
   .use(express.urlencoded({ extended: true }))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
+  .get('/health', function (req, res) {
+    res.status(200).send('healthy')
+   })
   .get('/', function (req, res) {
     const ejsData = {
 
     }
     res.render('pages/index', ejsData)
   })
-  .get('/health', function (req, res) {
-   res.status(200).send('healthy')
-  })
-    .get('/about', function (req, res) {
-        const ejsData = {
+  .get('/about', function (req, res) {
+      const ejsData = {
 
-        }
-        res.render('pages/about', ejsData)
-    })
+      }
+      res.render('pages/about', ejsData)
+  })
   .listen(PORT, () => console.log(`Listening on ${PORT}`))
