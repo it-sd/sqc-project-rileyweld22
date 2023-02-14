@@ -1,0 +1,102 @@
+/*
+AUTHOR: RILEY WELD
+DATE: 02/13/2023
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #ddd;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.mainNav {
+    margin-top: 5px;
+}
+
+.title a, .mainNav a {
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+}
+
+.mainNav a {
+    color: black;
+    font-size: .99em;
+}
+
+.mainNav a:hover {
+    color: #888888;
+}
+
+.header, .mainNav {
+    display: flex;
+}
+
+.header {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 2px solid black;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.mainContent {
+    text-align: center;
+}
+
+.mainContent a:hover {
+    color: #888888;
+}
+
+.mainParagraph {
+    padding: .5rem 20rem .5rem 20rem;
+}
+
+@media only screen and (max-width: 980px){
+
+    .mainParagraph {
+        padding: .5rem 10rem .5rem 10rem;
+    }
+
+}
+
+@media only screen and (max-width: 750px){
+
+    .title a, .mainNav a {
+        padding: 10px 15px;
+    }
+
+    .mainNav a {
+        font-size: .85em;
+    }
+
+    .mainParagraph {
+        font-size: .9em;
+        padding: .5rem 5rem .5rem 5rem;
+    }
+}

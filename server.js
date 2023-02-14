@@ -13,15 +13,11 @@ express()
     res.status(200).send('healthy')
    })
   .get('/', function (req, res) {
-    const ejsData = {
-
-    }
+    const ejsData = {}
     res.render('pages/index', ejsData)
   })
   .get('/about', function (req, res) {
-      const ejsData = {
-
-      }
+      const ejsData = {}
       res.render('pages/about', ejsData)
   })
   .listen(PORT, () => console.log(`Listening on ${PORT}`))
