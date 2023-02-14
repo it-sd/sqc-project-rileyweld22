@@ -73,6 +73,20 @@ a {
     color: #888888;
 }
 
+.mainH1 {
+    border: 2px solid black;
+    margin: 5rem 10rem;
+    padding: 12rem 0rem;
+
+}
+
+.mainH1 h1 {
+    display: flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
 .mainParagraph {
     padding: .5rem 20rem .5rem 20rem;
 }
