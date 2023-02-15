@@ -9,4 +9,4 @@
 ## Link to site ##
 ### [Tune Charts](https://tune-charts.onrender.com) ###
 
-4. Hello from jzarins2!
+4.jzarins2 can handle rejection
