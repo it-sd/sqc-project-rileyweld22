@@ -48,13 +48,11 @@ express()
   .set('view engine', 'ejs')
   .get('/health', async function (req, res) {
     const songs = await queryAllSongs()
-    //console.log(songs)
     if (songs != null){
       res.status(200).send('healthy')
     } else {
       res.status(500).send('Database query failed. Try again later...')
     }
-    //res.status(200).send('healthy')
    })
   .get('/', async function (req, res) {
     const songs = await queryAllSongs()

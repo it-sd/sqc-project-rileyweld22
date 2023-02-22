@@ -18,7 +18,7 @@ describe('song server', function () {
         }, 10000)
     }
     describe("GET '/health'", function () {
-        shouldBeAbove200('/healthy')
+        shouldBeAbove200('/health')
     })
     describe("GET '/'", function () {
         shouldBeAbove200('/')
