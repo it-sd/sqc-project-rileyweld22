@@ -16,6 +16,7 @@
     <title>Tune Charts</title>
 </head>
 <body>
+
    <div class="mainDiv">
 
         <header class="header">
@@ -29,13 +30,20 @@
         </header>
 
         <div class="mainContent">
-            <h1 class="mainH1">Top charts go here</h1>
+           <h1>- TOP CHART'S -</h1>
+            <%_ for (const song of songs) { _%>
+                <%_ if(song.length) { _%>
+                <%_ let minutes = Math.floor(song.length / 60) _%>
+                <%_ let extraSeconds = song.length % 60 _%>
+                <%_ minutes = minutes < 10 ? "0" + minutes : minutes; _%>
+                <%_ extraSeconds = extraSeconds< 10 ? "0" + extraSeconds : extraSeconds; _%>
+                <%_ let final = minutes + " : " + extraSeconds _%>
+                <p class="mainP"><%= song.number %> . )&ensp;&ensp;  Song:&ensp; <%= song.name %> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Artist:&ensp; <%= song.artist %>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Album:&ensp; <%= song.album %>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Length:&ensp; <%= final %></p>
+                <%_ } _%>
+            <%_ } _%>
         </div>
-
         
-
    </div>
-
     
 </body>
 </html>

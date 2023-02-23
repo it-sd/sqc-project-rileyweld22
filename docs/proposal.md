@@ -38,3 +38,6 @@ login table, personal information table, and the chart table.  ###
 ---------------
 ## Initial designs ##
 ###### ![SITE MAP](../docs/siteLayout.jpeg) ![SAMPLE LAYOUT](../docs/samplePage.jpeg) ######
+
+## ER diagram ##
+###### ![ER DIAGRAM](../docs/erDiagram.jpeg) ######
