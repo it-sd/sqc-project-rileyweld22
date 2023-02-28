@@ -1,10 +1,18 @@
 \encoding UTF8
 
+DROP TABLE IF EXISTS profile;
 DROP TABLE IF EXISTS chart;
 DROP TABLE IF EXISTS tune_chart;
 
+CREATE TABLE profile (
+    id SERIAL PRIMARY KEY,
+    username TEXT NOT NULL,
+    password TEXT NOT NULL
+);
+
 CREATE TABLE chart (
     id SERIAL PRIMARY KEY,
+    profile_id INTEGER NOT NULL,
     number INTEGER NOT NULL,
     name TEXT NOT NULL,
     time TIMESTAMP WITH TIME ZONE NOT NULL,
