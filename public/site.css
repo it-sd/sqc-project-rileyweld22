@@ -84,12 +84,6 @@ a {
     justify-content:center;
 }
 
-.mainP {
-    /* border: 2px solid black;
-    margin: 5rem 10rem;
-    padding: 12rem 0rem; */
-}
-
 .mainP p {
     display: flex;
     align-items:center;
