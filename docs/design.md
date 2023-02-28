@@ -20,3 +20,16 @@ understand would just hinder the usability of my site.
 
 ## Diagram / Sketch ##
 ###### ![Project Analysis](../docs/projectAnalysis.jpeg) ######
+
+## Color Palette ##
+##### ------------- #####
+In the picture below, you can see the color values I gave selected for the website. I already have the cream color applied to the webiste. I chose the other colors because forest green is my favorite color. I believe it is very pleasing to the eye. The other maroon color is complementary to the green. They go well together. The lighter green is to contrast against the darker green. And lastly, the white is just an essential color that every website should utilize.
+##### ------------- #####
+
+## Color Image ##
+###### ![Colors](../docs/colorPalette.png) ######
+
+## Typography ##
+##### ------------- #####
+The typography that I chose is very minimalist and modern. The name of the font is called "Montserrat". It's a free font from google. I import this on every webpage to keep the same theme throughout the whole website. This will be the only font I will be using as well. I'm doing this because I believe it provides the website with consistent theme. In the headers and titles, I will most likely bold the font to make it stand out on the page. But the rest of the page will be the regular font.
+##### ------------- #####
