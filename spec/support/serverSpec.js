@@ -1,6 +1,9 @@
 const { queryAllSongs } =
   require('../../server.js')
 
+  const { generateRandomString } =
+  require('../../server.js')
+
 describe('song server', function () {
     const baseUrl = 'http://localhost:5163'
     const shouldBeAbove200 = async function (route) {
@@ -102,6 +105,17 @@ describe('song server', function () {
           })
           expect(response.ok).toBeFalse()
         })
-      })
+    })
+
+  describe('generateRandomString', function () {
+    it('should return a random string', async function () {
+        const resultsOne = await generateRandomString(10)
+        const resultsTwo = await generateRandomString(0)
+        expect(resultsOne.length).toBeGreaterThan(5)
+        expect(resultsTwo.length).toBeLessThan(5)
+    })
+  })
+
+  
 
 })
