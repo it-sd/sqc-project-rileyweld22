@@ -29,7 +29,5 @@ describe('client', function () {
       expect(details.click()).toBeDefined()
     })
 
-
-
   })
 })
