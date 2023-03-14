@@ -75,6 +75,7 @@
       
           <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
           <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
           <script>
             (function() {
 
@@ -106,7 +107,7 @@
                   oauthPlaceholder = document.getElementById('oauth');
       
               var params = getHashParams();
-      
+              var $ = require('jquery')
               
               var access_token = params.access_token,
                   refresh_token = params.refresh_token,
