@@ -80,6 +80,10 @@ express()
     const ejsData = {}
     res.render('pages/profile', ejsData)
   })
+  .get('/more', function (req, res) {
+    const ejsData = {}
+    res.render('pages/more', ejsData)
+  })
   .post('/register', async function (req, res) {
     res.set({ 'Content-Type': 'application/json' })
 
