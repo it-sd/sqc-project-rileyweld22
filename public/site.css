@@ -94,6 +94,26 @@ a {
     padding: .5rem 20rem .5rem 20rem;
 }
 
+.addingSongs{
+    text-align: center;
+    border: 2px solid black;
+    margin: 5rem 10rem;
+    padding: 3rem 0rem; 
+}
+
+.addingSongs p {
+    display: inline; 
+}
+
+#songTitle {
+    margin-right: 20px;
+}
+
+#songAlbum {
+    margin-right: 20px;
+}
+
+
 @media only screen and (max-width: 980px){
 
     .mainParagraph {

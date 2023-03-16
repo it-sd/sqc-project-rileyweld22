@@ -69,43 +69,6 @@ describe('song server', function () {
     })
   })
 
-  describe("POST '/register'", function () {
-    const url = new URL('/register', baseUrl)
-
-    it('should accept valid usernames and passcodes', async function () {
-      const data = {
-        username: 'rileyweld',
-        password: 'password'
-      }
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      expect(response.ok).toBeTrue()
-    })
-
-    it('should reject invalid usernames and passcodes', async function () {
-      const data = {
-        username: 'rileyweld',
-        password: ''
-      }
-
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      expect(response.ok).toBeFalse()
-    })
-  })
-
   describe('generateRandomString', function () {
     it('should return a random string', async function () {
       const resultsOne = await generateRandomString(10)

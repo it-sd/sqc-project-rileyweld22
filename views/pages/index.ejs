@@ -45,9 +45,153 @@
             <%_ } _%>
         </div>
 
-        
+        <div class="addingSongs">
+            <h1>- ADD & DELETE SONG'S -</h1>
+            <h2 id="success"></h2>
+            <h2>Add a Song</h2>
+            <p style="display: block;"> * Refresh page to see song added * </p>
+            <div class="topRow">
+                <p>Song Name: </p>
+                <input class="addSong" id="songTitle" placeholder="Song Name" maxlength="32" size="10">
+                <p>Artist Name: </p>
+                <input class="addSong" id="songArtist" placeholder="Artist" maxlength="32" size="10">
+            </div>
+            <br>
+            <div class="bottomRow">
+                <p>Song Album: </p>
+                <input class="addSong" id="songAlbum" placeholder="Ablum Name" maxlength="32" size="10">
+                <p>Song Length (In seconds): </p>
+                <input class="addSong" id="songLength" placeholder="Song Length" maxlength="32" size="10">
+                <br>
+                <button id="add" style="margin-top: 10px; padding: 5px 15px 5px 15px;">ADD</button>
+            </div>
+
+            <h2>Delete a Song</h2>
+            <p style="display: block;"> * When searching the database for a song, please enter the correct <br> name for the song.
+                Capitilization will matter * 
+            </p>
+            <div class="topRow">
+                <p>Song Name: </p>
+                <input id="removeSong" placeholder="Song Name" maxlength="32" size="10">
+                <br>
+                <button id="remove" style="margin-top: 15px; padding: 5px 15px 5px 15px;">REMOVE</button>
+            </div>
+            <h2 id="failure"></h2>
+            <br>
+        </div>
+
    </div>
     
+<script>
+
+const main = document.querySelector('main')
+const success = document.getElementById('success')
+const failure = document.getElementById('failure')
+const songTitle = document.getElementById('songTitle')
+const songArtist = document.getElementById('songArtist')
+const songAlbum = document.getElementById('songAlbum')
+const songLength = document.getElementById('songLength')
+const removeSong = document.getElementById('removeSong')
+const add = document.getElementById('add')
+const remove = document.getElementById('remove')
+
+
+const checkNullAddSong = function () {
+  const isValid = true
+
+  if(songTitle.value == "" || songTitle.value == null){
+    isValid = false
+  }
+  if(songArtist.value == "" || songArtist.value == null){
+    isValid = false
+  }
+  if(songAlbum.value == "" || songAlbum.value == null){
+    isValid = false
+  }
+  if(songLength.value == null){
+    isValid = false
+  }
+
+  return isValid
+}
+
+const checkNullRemoveSong = function () {
+  const isValid = true
+
+  if(removeSong.value == "" || removeSong.value == null){
+    isValid = false
+  }
+
+  return isValid
+}
+
+const addASong = async function () {
+
+    if(checkNullAddSong()){
+
+        const data = {
+            songTitle: songTitle.value,
+            songArtist: songArtist.value,
+            songAlbum: songAlbum.value,
+            songLength: songLength.value
+        }
+
+        const response = await fetch('/addSong', {
+        method: 'POST',
+        headers: {
+        Accept: 'application/json', 'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(data)
+        })
+
+        if (response.ok) {
+        const result = await response.json()
+        if (result.ok) {
+            success.innerHTML = 'Success!'
+            return
+        } 
+        } else {
+            success.innerHTML = 'Server Error...'
+        }
+
+    }
+
+}
+
+const removeASong = async function () {
+
+    if(checkNullAddSong()){
+
+        const data = {
+            removeSong: removeSong.value
+        }
+
+        const response = await fetch('/removeSong', {
+            method: 'POST',
+            headers: {
+            Accept: 'application/json', 'Content-Type': 'application/json' 
+            },
+            body: JSON.stringify(data)
+        })
+
+        if (response.ok) {
+            const result = await response.json()
+        if (result.ok) {
+            failure.innerHTML = 'Success!'
+            return
+        } 
+        } else {
+            failure.innerHTML = 'Server Error...'
+        }
+
+    }
+}
+add.addEventListener('click', (e) => addASong())
+remove.addEventListener('click', (e) => removeASong())
+
+
+</script>
+
 </body>
 
 </html>
