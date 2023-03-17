@@ -20,7 +20,6 @@ describe('client', function () {
       expect(clicked).toBeDefined()
     })
 
-
     it('should have a button', async function () {
       const details = await driver.findElement(By.id('mainButton'))
       await details.click()

@@ -26,7 +26,6 @@ describe('song server', function () {
   })
   describe("GET '/'", function () {
     shouldBeAbove200('/')
-
   })
   describe("GET '/health'", function () {
     shouldBeLessThan399('/health')
@@ -94,7 +93,6 @@ describe('song server', function () {
       const results = await numOfSongs()
       expect(results.length).toBeGreaterThanOrEqual(1)
     })
-
   })
 
   describe('findSongNum', function () {
@@ -102,7 +100,5 @@ describe('song server', function () {
       const results = await findSongNum('Woods')
       expect(results).toEqual(1)
     })
-
   })
-
 })
