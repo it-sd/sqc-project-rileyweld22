@@ -58,7 +58,6 @@ const findSongNum = async function (name) {
   const sql = `SELECT number FROM tune_chart Where name = '${name}';`
   const results = await query(sql)
   return results[0].number
-
 }
 
 module.exports = {
@@ -101,7 +100,7 @@ express()
     if (req.body.songTitle !== '' && req.body.songArtist !== '' && req.body.songAlbum !== '' && req.body.songLength !== '') {
       const client = await pool.connect()
       const song = await numOfSongs()
-      numSongs = parseInt(song)
+      const numSongs = parseInt(song)
       const insertSql = `INSERT INTO tune_chart (chart_id, number, name, artist, album, length) VALUES
       (${1}, ${numSongs + 1},$1::TEXT, $2::TEXT, $3::TEXT, $4::INTEGER)`
       await client.query(insertSql, [req.body.songTitle, req.body.songArtist, req.body.songAlbum, req.body.songLength])
@@ -119,7 +118,7 @@ express()
 
       try {
         const song = await findSongNum(req.body.removeSong)
-        numSong = parseInt(song)
+        const numSong = parseInt(song)
         const removeSql = `DELETE FROM tune_chart WHERE number = ${numSong}`
         await client.query(removeSql)
         res.json({ ok: true })

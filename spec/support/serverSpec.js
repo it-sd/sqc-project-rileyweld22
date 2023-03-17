@@ -1,4 +1,5 @@
-const { queryAllSongs } =
+const { request } = require('express')
+const { queryAllSongs, numOfSongs, findSongNum, query } =
   require('../../server.js')
 
 const { generateRandomString } =
@@ -25,12 +26,22 @@ describe('song server', function () {
   })
   describe("GET '/'", function () {
     shouldBeAbove200('/')
+
   })
   describe("GET '/health'", function () {
     shouldBeLessThan399('/health')
   })
   describe("GET '/'", function () {
     shouldBeLessThan399('/')
+  })
+
+  describe('query', function () {
+    it('should query sql information', async function () {
+      const sql = 'SELECT COUNT(chart_id) FROM tune_chart;'
+      const results = await query(sql)
+      expect(results).toBeDefined()
+      expect(results[0].count).toEqual('2')
+    })
   })
 
   describe('queryAllSongs', function () {
@@ -77,4 +88,21 @@ describe('song server', function () {
       expect(resultsTwo.length).toBeLessThan(5)
     })
   })
+
+  describe('numOfSongs', function () {
+    it('should return a query from the database', async function () {
+      const results = await numOfSongs()
+      expect(results.length).toBeGreaterThanOrEqual(1)
+    })
+
+  })
+
+  describe('findSongNum', function () {
+    it('should return the index of the songs Woods', async function () {
+      const results = await findSongNum('Woods')
+      expect(results).toEqual(1)
+    })
+
+  })
+
 })
